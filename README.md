@@ -59,9 +59,98 @@ It shares the same OS kernel as the host, so it doesn’t need a full OS like a 
 ---
 
 ## 🐳 Docker Initialization  
-📸 *Mark here to upload image later*
+![Docker Initialization](unt.png)
+
+# 🐳 Docker Initialization (Non-Root User Setup)
+
+When you install Docker on Linux, it usually requires **sudo** to run Docker commands.  
+This setup lets your user run Docker **without using `sudo`** every time.
 
 ---
+
+## 🧭 Steps to Enable Docker for a Non-Root User
+
+### 1️⃣ Switch to the Root User
+```bash
+sudo su
+````
+
+Used to switch to the **root account** to perform administrative actions.
+
+---
+
+### 2️⃣ Add Your User to the Docker Group
+
+```bash
+usermod -aG docker <username>
+```
+
+**Example:**
+
+```bash
+usermod -aG docker shyamdevk
+```
+
+✅ This adds the user **`shyamdevk`** to the **`docker` group**, giving permission to access the Docker daemon.
+
+---
+
+### 3️⃣ Exit Root Mode
+
+```bash
+exit
+```
+
+Leaves root mode and returns to your normal user session.
+
+---
+
+### 4️⃣ Test Docker Access
+
+```bash
+docker ps
+```
+
+❌ If you see:
+
+```
+permission denied while trying to connect to the Docker daemon socket
+```
+
+it means your group permissions haven’t refreshed yet.
+
+---
+
+### 5️⃣ Refresh Group Membership
+
+```bash
+newgrp docker
+```
+
+This command refreshes your session with the new group permissions — no need to log out.
+
+---
+
+### 6️⃣ Verify Docker Access
+
+```bash
+docker ps
+```
+
+✅ Now this should work — listing all running containers without needing `sudo`.
+
+---
+
+## 🧠 Summary
+
+| Command                         | Purpose                   |
+| ------------------------------- | ------------------------- |
+| `sudo su`                       | Switch to root user       |
+| `usermod -aG docker <username>` | Add user to docker group  |
+| `exit`                          | Return to normal user     |
+| `docker ps`                     | Test Docker access        |
+| `newgrp docker`                 | Refresh group permissions |
+
 
 ## 🐳 Docker Architecture  
 ![Docker Architecture](https://cdn.prod.website-files.com/681e366f54a6e3ce87159ca4/687d7a52cccb7374efbbf8ca_image2-49.png)
