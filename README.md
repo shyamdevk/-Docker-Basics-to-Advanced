@@ -841,11 +841,8 @@ Here’s how it works internally 👇
 
 ### 🖼️ *Docker Bridge Network Diagram*
 *(You can upload your image later and link it here)*  
-```markdown
-![Docker Bridge Network](images/dock.png)
-````
 
----
+![Screenshot](https://github.com/shyamdevk/Docker-Basics-to-Advanced/blob/images/dock.png)
 
 ### ⚙️ What the Diagram Shows
 
