@@ -842,7 +842,7 @@ Here’s how it works internally 👇
 ### 🖼️ *Docker Bridge Network Diagram*
 *(You can upload your image later and link it here)*  
 
-![Screenshot](https://github.com/shyamdevk/Docker-Basics-to-Advanced/blob/images/dock.png)
+![Screenshot](https://github.com/shyamdevk/Docker-Basics-to-Advanced/blob/image/dock.png)
 
 ### ⚙️ What the Diagram Shows
 
